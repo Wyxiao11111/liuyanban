@@ -130,13 +130,6 @@
             top: randY,
             left: randX
         }).mousedown(function (e) {
-			flag = true;
-            var touch ;
-        	if(e.touches){
-       	     	touch = e.touches[0];
-     		}else {
-            	touch = e;
-        	}
             parent.children().css({
                 "zIndex": "0"
             });
@@ -155,18 +148,11 @@
         $(document).mouseup(function (e) {
             isDown = false;
         }).mousemove(function (e) {
-			var touch ;
             var xPage = e.pageX;
             var moveX = positionX + xPage - x;
 
             var yPage = e.pageY;
             var moveY = positionY + yPage - y;
-
-            if(e.touches){
-                touch = e.touches[0];
-            }else {
-                touch = e;
-            }
 
             if (isDown == true) {
                 $this.css({
@@ -196,11 +182,7 @@
                     "top": ph - thisHeight
                 });
             }
-			
         });
-		document.addEventListener("touchmove",function(){
-                event.preventDefault();
-            },false);
     };
 	
 	// 初始化
