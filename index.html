@@ -183,33 +183,6 @@
                 });
             }
         });
-   function load (){  
-   
-   document.addEventListener('touchstart',touch, false);  
-   document.addEventListener('touchmove',touch, false);  
-   document.addEventListener('touchend',touch, false);  
-	  
-   function touch (e){  
-	   var e = e || window.event;  
-		  
-	   var oInp = document.getElementById("inp");  
-  
-	   switch(e.type){  
-		   case "touchstart":  
-			   oInp.innerHTML = "Touch started (" + e.touches[0].clientX + "," + e.touches[0].clientY + ")";  
-			   break;  
-		   case "touchend":  
-			   oInp.innerHTML = "<br>Touch end (" + e.changedTouches[0].clientX + "," + e.changedTouches[0].clientY + ")";  
-			   break;  
-		   case "touchmove":  
-			   e.preventDefault();  
-			   oInp.innerHTML = "<br>Touch moved (" + e.touches[0].clientX + "," + e.touches[0].clientY + ")";  
-			   break;  
-	   }  
-		  
-   }  
-}  
-window.addEventListener('load',load, false);  
     };
 	
 	// 初始化
